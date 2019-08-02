@@ -1,0 +1,8 @@
+(executable
+  (name main)
+  (libraries js_of_ocaml)
+  (preprocess (pps js_of_ocaml-ppx)))
+
+(alias
+  (name default)
+  (deps main.bc.js index.html))
