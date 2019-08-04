@@ -49,6 +49,9 @@ val all : (('a, 'b) t) array -> ('a array, 'b) t
 
 val race : (('a, 'b) t) array -> ('a, 'b) t
 
+val flat_resolve: 'a  -> ('b, 'c) t
+val flat_reject: 'a  -> ('b, 'c) t
+
 module Infix : sig
   val (>>=) : ('a, 'b) t -> ('a -> ('c ,'b) t) -> ('c, 'b) t
   val (>|=) : ('a, 'b) t -> ('a -> 'c) -> ('c, 'b) t

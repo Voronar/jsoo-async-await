@@ -57,6 +57,9 @@ let race promises =
   Js.Unsafe.fun_call promise_global##.race
     [|Js.Unsafe.inject (Js.array promises)|]
 
+let flat_resolve p = resolve p
+let flat_reject p = reject p
+
 module Infix = struct
   let (>>=) promise on_fulfilled = then_bind ~on_fulfilled promise
   let (>|=) promise on_fulfilled = then_map  ~on_fulfilled promise
